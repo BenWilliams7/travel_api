@@ -5,8 +5,6 @@ class Seed
     seed.generate_destinations
   end
 
-
-
   def generate_destinations
     Destination.destroy_all
     destination1 = Destination.create(name: "Aruba", description: "Tropical paradise - just don't wander off too far.", price: 250, url: "https://media-cdn.tripadvisor.com/media/photo-s/0e/af/0d/f3/sunlight-on-fofoti-eagle.jpg")
@@ -16,6 +14,11 @@ class Seed
     p "Created #{Destination.count} destinations"
   end
 
+
 end
 
 Seed.begin
+
+User.destroy_all
+User.create(name: 'bugs', email: 'bugs@rubyplus.com', password: '123456')
+User.create(name: 'daffy', email: 'daffy@rubyplus.com', password: '123456')
